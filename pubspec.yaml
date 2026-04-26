@@ -40,6 +40,7 @@ dependencies:
   # ── Sharing ───────────────────────────────────────────────
   share_plus: ^9.0.0              # system share sheet — v9 is compatible with firebase_auth ^4.x
   url_launcher: ^6.2.5            # sms: URI for directed SMS sharing
+  app_links: ^6.0.0               # incoming deep link (luma://s/{id}) handling
 
   # ── UI Helpers ────────────────────────────────────────────
   cached_network_image: ^3.3.1

@@ -984,6 +984,15 @@ class _LinkSheetState extends State<_LinkSheet> {
     ));
   }
 
+  void _shareLink() {
+    final link = _link;
+    if (link == null) return;
+    Share.share(
+      'luma://s/${link.id}',
+      subject: widget.event.title,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -1112,6 +1121,15 @@ class _LinkSheetState extends State<_LinkSheet> {
                       ),
                     ),
                   ],
+                ),
+              ),
+              const SizedBox(height: 12),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton.icon(
+                  onPressed: _shareLink,
+                  icon: const Icon(Icons.share_outlined, size: 18),
+                  label: const Text('Share link'),
                 ),
               ),
               const SizedBox(height: 16),

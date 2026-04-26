@@ -1,5 +1,7 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:app_links/app_links.dart';
 import '../../providers/auth_provider.dart';
 import '../../providers/event_provider.dart';
 import '../../models/event_model.dart';
@@ -19,16 +21,50 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  StreamSubscription<Uri>? _linkSub;
+
   @override
   void initState() {
     super.initState();
-    // Start listening to events once we have the user's uid
     WidgetsBinding.instance.addPostFrameCallback((_) {
       final uid = context.read<AuthProvider>().user?.uid;
       if (uid != null) {
         context.read<EventProvider>().startListening(uid);
       }
     });
+    _initDeepLinks();
+  }
+
+  Future<void> _initDeepLinks() async {
+    final appLinks = AppLinks();
+    final initialLink = await appLinks.getInitialLink();
+    if (initialLink != null && mounted) {
+      _handleDeepLink(initialLink);
+    }
+    _linkSub = appLinks.uriLinkStream.listen((uri) {
+      if (mounted) _handleDeepLink(uri);
+    });
+  }
+
+  void _handleDeepLink(Uri uri) {
+    if (uri.scheme != 'luma' || uri.host != 's') return;
+    final segments = uri.pathSegments;
+    if (segments.isEmpty) return;
+    final linkId = segments.first;
+    if (linkId.isEmpty) return;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) {
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (_) => ShareLinkScreen(linkId: linkId)),
+        );
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _linkSub?.cancel();
+    super.dispose();
   }
 
   Future<void> _confirmDeleteEvent(EventModel event) async {
