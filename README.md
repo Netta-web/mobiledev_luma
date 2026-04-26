@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # my_luma
 
 A new Flutter project.
@@ -15,3 +16,6 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+=======
+# mobiledev_luma
+>>>>>>> 74bc89d214597f19da0bf57d96bdbd7acf307b9f
