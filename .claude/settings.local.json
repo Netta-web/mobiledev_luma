@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/user/Downloads/flutter/packages/flutter_tools/gradle/**)",
+      "Read(//c/Users/user/AppData/Local/Pub/Cache/hosted/pub.dev/geolocator_android-4.6.2/android/**)",
+      "Bash(flutter build *)",
+      "Bash(flutter analyze *)"
+    ]
+  }
+}

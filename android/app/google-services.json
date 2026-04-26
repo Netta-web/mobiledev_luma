@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "649320334805",
+    "project_id": "luma-app-50cee",
+    "storage_bucket": "luma-app-50cee.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:649320334805:android:f3385e15961c4f9633e95c",
+        "android_client_info": {
+          "package_name": "com.example.my_luma"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrSkcEzJnF7gONN6skA7i5VXjJ4HBLtag"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:649320334805:android:526272efc7545e7833e95c",
+        "android_client_info": {
+          "package_name": "luma.a"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrSkcEzJnF7gONN6skA7i5VXjJ4HBLtag"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:649320334805:android:e8691b3471636d7233e95c",
+        "android_client_info": {
+          "package_name": "luma.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrSkcEzJnF7gONN6skA7i5VXjJ4HBLtag"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
